@@ -15,4 +15,13 @@ public class MainMenuManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void goToMain()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
