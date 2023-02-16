@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe78d5df9972a1a46bdf9d4f431ee189, type: 3}
+  m_Name: Potato
+  m_EditorClassIdentifier: 
+  plantName: Potato
+  plantStages:
+  - {fileID: -1002667638, guid: d856031d1d59c164e83fde0012a02afd, type: 3}
+  - {fileID: 645226096, guid: d856031d1d59c164e83fde0012a02afd, type: 3}
+  - {fileID: 1783637378, guid: d856031d1d59c164e83fde0012a02afd, type: 3}
+  - {fileID: 1563269315, guid: d856031d1d59c164e83fde0012a02afd, type: 3}
+  timeBtwStages: 4
+  buyPrice: 10
+  sellPrice: 20
+  icon: {fileID: 21300000, guid: caa24961a187e4a4eba3c98fd9f68c4d, type: 3}
+  dryPlanted: {fileID: 21300000, guid: cdec2827428f4c047abcb98a6068dd26, type: 3}
