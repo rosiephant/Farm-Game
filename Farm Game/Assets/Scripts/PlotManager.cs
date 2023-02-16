@@ -27,8 +27,8 @@ public class PlotManager : MonoBehaviour
     public Sprite normalSprite;
     public Sprite unavailableSprite;
 
-    float speed = 1f;
-    public bool isBought = true;
+    float speed=1f;
+    public bool isBought=true;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +45,7 @@ public class PlotManager : MonoBehaviour
         {
             plot.sprite = unavailableSprite;
         }
-
+        
     }
 
     // Update is called once per frame
@@ -53,9 +53,9 @@ public class PlotManager : MonoBehaviour
     {
         if (isPlanted && !isDry)
         {
-            timer -= speed * Time.deltaTime;
+            timer -= speed*Time.deltaTime;
 
-            if (timer < 0 && plantStage < selectedPlant.plantStages.Length - 1)
+            if (timer < 0 && plantStage<selectedPlant.plantStages.Length-1)
             {
                 timer = selectedPlant.timeBtwStages;
                 plantStage++;
@@ -73,7 +73,7 @@ public class PlotManager : MonoBehaviour
                 Harvest();
             }
         }
-        else if (fm.isPlanting && fm.selectPlant.plant.buyPrice <= fm.money && isBought)
+        else if(fm.isPlanting && fm.selectPlant.plant.buyPrice <= fm.money && isBought)
         {
             Plant(fm.selectPlant.plant);
         }
@@ -82,15 +82,14 @@ public class PlotManager : MonoBehaviour
             switch (fm.selectedTool)
             {
                 case 1:
-                    if (isBought)
-                    {
+                    if (isBought) {
                         isDry = false;
                         plot.sprite = normalSprite;
                         if (isPlanted) UpdatePlant();
                     }
                     break;
                 case 2:
-                    if (fm.money >= 10 && isBought)
+                    if (fm.money>=10 && isBought)
                     {
                         fm.Transaction(-10);
                         if (speed < 2) speed += .2f;
@@ -114,7 +113,7 @@ public class PlotManager : MonoBehaviour
     {
         if (fm.isPlanting)
         {
-            if (isPlanted || fm.selectPlant.plant.buyPrice > fm.money || !isBought)
+            if(isPlanted || fm.selectPlant.plant.buyPrice > fm.money || !isBought)
             {
                 //can't buy
                 plot.color = unavailableColor;
@@ -131,7 +130,7 @@ public class PlotManager : MonoBehaviour
             {
                 case 1:
                 case 2:
-                    if (isBought && fm.money >= (fm.selectedTool - 1) * 10)
+                    if (isBought && fm.money>=(fm.selectedTool-1)*10)
                     {
                         plot.color = availableColor;
                     }
@@ -141,7 +140,7 @@ public class PlotManager : MonoBehaviour
                     }
                     break;
                 case 3:
-                    if (!isBought && fm.money >= 100)
+                    if (!isBought && fm.money>=100)
                     {
                         plot.color = availableColor;
                     }
@@ -197,7 +196,7 @@ public class PlotManager : MonoBehaviour
             plant.sprite = selectedPlant.plantStages[plantStage];
         }
         plantCollider.size = plant.sprite.bounds.size;
-        plantCollider.offset = new Vector2(0, plant.bounds.size.y / 2);
+        plantCollider.offset = new Vector2(0,plant.bounds.size.y/2);
     }
 
 }
